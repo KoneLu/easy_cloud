@@ -1,0 +1,10 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:50000/eureka/

@@ -1,0 +1,26 @@
+# -- 端口号 8769 服务名称 scfl-config-server
+# -- spring.profiles.active=native来配置config server从本地读取配置读配置的路径为classpath下的shared目录。
+server:
+  port: 8769
+spring:
+  application:
+    name: config-server
+  profiles:
+    # -- 手动配置
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:50000/eureka/
