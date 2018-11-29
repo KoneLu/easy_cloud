@@ -1,14 +1,5 @@
 spring:
   cloud:
-    config:
-      #通过IP加端口访问
-      uri: http://localhost:8769
-        #通过服务ID访问
-        #discovery:
-      #enabled: true
-      #service-id: config-server
-      #启动失败时能够快速响应
-      fail-fast: true
     bus:
       trace:
         enabled: true
