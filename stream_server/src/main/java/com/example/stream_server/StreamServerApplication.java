@@ -1,9 +1,11 @@
-package com.example.config_client;
+package com.example.stream_server;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+
 
 /**注册中心*/
 @EnableDiscoveryClient
@@ -14,8 +16,8 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  * */
 @RefreshScope
 @SpringBootApplication
-public class ConfigClientApplication {
+public class StreamServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConfigClientApplication.class, args);
+        SpringApplication.run(StreamServerApplication.class,args);
     }
 }

@@ -1,0 +1,13 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: stream-server
+  profiles:
+    active: dev
+  cloud:
+    config:
+      #通过IP加端口访问
+      uri: http://localhost:8769
+      #启动失败时能够快速响应
+      fail-fast: true

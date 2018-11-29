@@ -10,6 +10,7 @@
         <module>eureka_server</module>
         <module>config_server</module>
         <module>config_client</module>
+        <module>stream_server</module>
     </modules>
     <packaging>pom</packaging>
 
