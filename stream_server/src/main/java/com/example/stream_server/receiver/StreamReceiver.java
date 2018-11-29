@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
-
+/**创建消费者*/
 @Component
 @EnableBinding( value = StreamClient.class)
 public class StreamReceiver {

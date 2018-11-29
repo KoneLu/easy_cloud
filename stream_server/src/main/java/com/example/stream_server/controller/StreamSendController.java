@@ -12,6 +12,7 @@ public class StreamSendController {
     @Autowired
     StreamClient streamClient;
 
+    /**测试管道通信*/
     @GetMapping("send")
     public void send() {
         streamClient.output().send(MessageBuilder.withPayload("Hello World...").build());
