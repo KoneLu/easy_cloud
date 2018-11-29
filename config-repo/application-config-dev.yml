@@ -1,0 +1,52 @@
+spring:
+  cloud:
+    config:
+      #通过IP加端口访问
+      uri: http://localhost:8769
+        #通过服务ID访问
+        #discovery:
+      #enabled: true
+      #service-id: config-server
+      #启动失败时能够快速响应
+      fail-fast: true
+    bus:
+      trace:
+        enabled: true
+      enabled: true
+    #和重试机制相关的配置有如下四个：
+    retry:
+      # 配置重试次数，默认为6
+      max-attempts: 6
+      # 间隔乘数，默认1.1
+      multiplier: 1.1
+      # 初始重试间隔时间，默认1000ms
+      initial-interval: 1000
+      # 最大间隔时间，默认2000ms
+      max-interval: 2000
+  # Rabbitmq 配置
+  rabbitmq:
+    host: 115.29.221.237
+    port: 5672
+    username: admin
+    password: 123456
+
+# -- 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:50000/eureka/
+
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
