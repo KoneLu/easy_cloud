@@ -14,6 +14,13 @@ spring:
       initial-interval: 1000
       # 最大间隔时间，默认2000ms
       max-interval: 2000
+    stream:
+      bindings:
+        myInput:
+          #指定输入通道对应的主题名
+          destination: minestream
+        myOutput:
+          destination: minestream
   # Rabbitmq 配置
   rabbitmq:
     host: 115.29.221.237
