@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: config-server
-
   cloud:
     config:
       server:
@@ -14,6 +13,16 @@ spring:
           #  username:
           #  password:
           default-label: master
+          #basedir: classpath:/templates
+    bus:
+      trace:
+        enabled: true
+      enabled: true
+  rabbitmq:
+    host: 115.29.221.237
+    port: 5672
+    username: admin
+    password: 123456
 
 eureka:
   instance:
@@ -25,3 +34,13 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:50000/eureka/
+
+management:
+  endpoints:
+    endpoints:
+      web:
+        exposure:
+          include: bus-refresh
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"

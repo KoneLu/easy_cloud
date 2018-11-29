@@ -5,5 +5,28 @@ spring:
     active: dev
   cloud:
     config:
+      #通过IP加端口访问
       uri: http://localhost:8769
+      #通过服务ID访问
+      #discovery:
+        #enabled: true
+        #service-id: config-server
+      #启动失败时能够快速响应
       fail-fast: true
+    bus:
+      trace:
+        enabled: true
+      enabled: true
+  rabbitmq:
+    host: 115.29.221.237
+    port: 5672
+    username: admin
+    password: 123456
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
