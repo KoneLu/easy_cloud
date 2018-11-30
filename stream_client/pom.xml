@@ -9,13 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cralor</groupId>
-    <artifactId>config_client</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>config_client</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>stream_client</artifactId>
 
     <dependencies>
         <!--添加  重试机制 的依赖
@@ -59,6 +53,18 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- Stream 依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+        </dependency>
+
+        <!-- 引入api_common依赖 -->
+        <dependency>
+            <groupId>com.cralor</groupId>
+            <artifactId>api_common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -69,4 +75,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

@@ -58,6 +58,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream</artifactId>
         </dependency>
+
+        <!-- 引入api_common依赖 -->
+        <dependency>
+            <groupId>com.cralor</groupId>
+            <artifactId>api_common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

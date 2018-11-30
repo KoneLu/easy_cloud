@@ -11,6 +11,8 @@
         <module>config_server</module>
         <module>config_client</module>
         <module>stream_server</module>
+        <module>api_common</module>
+        <module>stream_client</module>
     </modules>
     <packaging>pom</packaging>
 
