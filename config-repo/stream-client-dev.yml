@@ -20,6 +20,8 @@ spring:
           #指定输入通道对应的主题名
           destination: minestream
           group: groupA
+        myOutput:
+          destination: minestream
 
   # Rabbitmq 配置
   rabbitmq:
