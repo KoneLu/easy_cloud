@@ -16,6 +16,15 @@ spring:
       max-interval: 2000
     stream:
       bindings:
+        myInput:
+          #指定输入通道对应的主题名
+          destination: minestream
+          #指定该应用实例属于 stream 消费组
+          group: stream
+          # -- 分区
+          consumer:
+            #通过该参数开启消费者分区功能
+            partitioned: true
         myOutput:
           destination: minestream
           producer:
