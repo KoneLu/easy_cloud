@@ -16,6 +16,9 @@ spring:
       max-interval: 2000
     stream:
       bindings:
+        myInput:
+          #指定输入通道对应的主题名
+          destination: minestream
         myOutput:
           destination: minestream
 
