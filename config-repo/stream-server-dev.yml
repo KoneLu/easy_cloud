@@ -19,8 +19,9 @@ spring:
         myInput:
           #指定输入通道对应的主题名
           destination: minestream
-        myOutput:
-          destination: minestream
+          group: groupB
+        callBackInput:
+          destination: callbackstream
 
 
   # Rabbitmq 配置
