@@ -16,13 +16,11 @@ spring:
       max-interval: 2000
     stream:
       bindings:
-        myInput:
-          #指定输入通道对应的主题名
+        myOutput:
           destination: minestream
-          group: groupB
         callBackInput:
           destination: callbackstream
-
+          group: groupB
 
   # Rabbitmq 配置
   rabbitmq:
