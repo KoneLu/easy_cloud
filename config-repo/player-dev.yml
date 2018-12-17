@@ -34,7 +34,10 @@ spring:
 
 # -- 注册中心配置
 eureka:
+  server:
+    port: 9001
   instance:
+    hostname: localhost
     prefer-ip-address: true
     status-page-url-path: /actuator/info
     health-check-url-path: /actuator/health
@@ -42,7 +45,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:50000/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${eureka.server.port}/eureka/
 
 
 management:
