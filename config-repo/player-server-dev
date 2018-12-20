@@ -1,0 +1,25 @@
+server:
+  port: 9030
+  maxHttpHeaderSize: 65535
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  maxAutoRetries: 0
+
+flyway:
+  enable: true
+  baseline-on-migrate: true
+  encoding: UTF-8
+  baseline-version: 0
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
