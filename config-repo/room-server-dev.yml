@@ -1,0 +1,53 @@
+server:
+  port: 9030
+  maxHttpHeaderSize: 65535
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  maxAutoRetries: 0
+  
+feign:
+  hystrix:
+    enabled: true
+
+flyway:
+  enable: true
+  baseline-on-migrate: true
+  encoding: UTF-8
+  baseline-version: 0
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  
+spring:
+  datasource:
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    driverClassName: org.mariadb.jdbc.Driver
+    filters: stat,wall,log4j
+    initialSize: 5
+    maxActive: 20
+    maxPoolPreparedStatementPerConnectionSize: 20
+    maxWait: 60000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 5
+    name: roomDb
+    password: aa64766764
+    poolPreparedStatements: true
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mariadb://localhost:3306/roomDb?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    useUnfairLock: true
+    username: root
+    validationQuery: select 1
