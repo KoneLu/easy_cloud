@@ -1,5 +1,5 @@
 server:
-  port: 9030
+  port: 9040
   maxHttpHeaderSize: 65535
 
 hystrix:
