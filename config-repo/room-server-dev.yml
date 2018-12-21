@@ -17,6 +17,8 @@ ribbon:
 feign:
   hystrix:
     enabled: true
+  okhttp:
+    enabled: true
 
 flyway:
   enable: true
